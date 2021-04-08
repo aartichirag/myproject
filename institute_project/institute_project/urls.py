@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth.views import LoginView
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/',include("users.urls")),
     path('course/',include("course.urls")),
     path('student/',include("student.urls")),
+    path("addmission/",include("addmission.urls")),
     path('login/',LoginView.as_view(template_name="users/sign-in.html",success_url="/home/"),name="login")
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
