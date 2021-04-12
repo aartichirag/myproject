@@ -113,9 +113,9 @@
                                                 <td>{{student.email_id }}</td>
 <!--                                                <td>{{student.inquiry_id }}</td>-->
                                                 <td>
-                                                    <a href="{% url 'student-update' student.id %}"><div class="demo-google-material-icon"> <i class="material-icons">edit</i> <span class="icon-name">edit</span> </div></a>&nbsp;
-                                                    <a href="{% url 'student-delete' student.id %}"><div class="demo-google-material-icon"> <i class="material-icons">delete</i> <span class="icon-name">delete</span> </div></a>
+                                                    <a href="{% url 'student-update' student.id %}"><div class="demo-google-material-icon"> <i class="material-icons">edit</i> <span class="icon-name">edit</span> </div></a>
                                                     <a href="{% url 'student-detail' student.id %}"><div class="demo-google-material-icon"> <i class="material-icons">details</i> <span class="icon-name">details</span> </div></a>
+                                                    <a href="{% url 'student-delete' student.id %}"><div class="demo-google-material-icon"> <i class="material-icons">delete</i> <span class="icon-name">delete</span> </div></a>
                                                 </td>
                                             </tr>
                                         {% endfor %}

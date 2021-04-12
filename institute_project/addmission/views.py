@@ -6,3 +6,18 @@ from .models import addmission_details
 class NewAddmission(CreateView):
     model = addmission_details
     fields = '__all__'
+
+class ViewAddmission(ListView):
+    model = addmission_details
+    context_object_name = 'addmissions'
+
+class UpdateAddmission(UpdateView):
+    model = addmission_details
+    fields = '__all__'
+
+class DetailAddmission(DetailView):
+    model = addmission_details
+
+class DeleteAddmission(DeleteView):
+    model = addmission_details
+    success_url = '/addmission/view'

@@ -8,6 +8,16 @@
 
     <!-- Bootstrap Select Css -->
     <link href="{% static 'plugins/bootstrap-select/css/bootstrap-select.css' %}" rel="stylesheet" />
+
+        <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="{% static 'plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css' %}" rel="stylesheet" />
+
+    <!-- Bootstrap DatePicker Css -->
+    <link href="{% static 'plugins/bootstrap-datepicker/css/bootstrap-datepicker.css' %}" rel="stylesheet" />
+
+    <!-- Wait Me Css -->
+    <link href="{% static 'plugins/waitme/waitMe.css' %}" rel="stylesheet" />
+
 {% endblock %}
 {% block body %}
 <div class="row clearfix">
@@ -33,19 +43,19 @@
                                 {% csrf_token %}
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Student Id</label>
-                                        {% crispy_field form.student_id %}
+                                        <label class="form-label">Student</label>
+                                        {% crispy_field form.student %}
                                     </div>
-                                    {% if form.student_id.errors %}
-                                        {% for error in form.student_id.errors %}
-                                            <label id="student_id-error" class="error" for="student_id"><b>{{ error }}</b></label>
+                                    {% if form.student.errors %}
+                                        {% for error in form.student.errors %}
+                                            <label id="student-error" class="error" for="student"><b>{{ error }}</b></label>
                                         {% endfor %}
                                     {% endif %}
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <label class="form-label">Date Of Addmission</label>
-                                        {% crispy_field form.date_of_addmission %}
+                                        {% crispy_field form.date_of_addmission  'disable' 'True'%}
                                     </div>
                                     {% if form.date_of_addmission.errors %}
                                         {% for error in form.date_of_addmission.errors %}
@@ -55,19 +65,18 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Course Id</label>
-                                        {% crispy_field form.course_id %}
+                                        <label class="form-label">Course</label>
+                                        {% crispy_field form.course %}
                                     </div>
-                                    {% if form.course_id.errors %}
-                                        {% for error in form.course_id.errors %}
-                                            <label id="course_id-error" class="error" for="course_id"><b>{{ error }}</b></label>
+                                    {% if form.course.errors %}
+                                        {% for error in form.course.errors %}
+                                            <label id="course-error" class="error" for="course"><b>{{ error }}</b></label>
                                         {% endfor %}
                                     {% endif %}
                                 </div>
                                  <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Start Time</label>
-                                        {% crispy_field form.start_time %}
+                                        {% crispy_field form.start_time 'class' 'timepicker' 'placeholder' 'Start Time' %}
                                     </div>
                                     {% if form.start_time.errors %}
                                         {% for error in form.start_time.errors %}
@@ -77,8 +86,7 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">End Time</label>
-                                        {% crispy_field form.end_time %}
+                                        {% crispy_field form.end_time 'class' 'timepicker' 'placeholder' 'End Time'%}
                                     </div>
                                     {% if form.end_time.errors %}
                                         {% for error in form.end_time.errors %}
@@ -86,36 +94,24 @@
                                         {% endfor %}
                                     {% endif %}
                                 </div>
+
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Receipt Id Or Object Of Payment Details</label>
-                                        {% crispy_field form.receipt_id_or_object_of_payment_details %}
-                                    </div>
-                                    {% if form.receipt_id_or_object_of_payment_details.errors %}
-                                        {% for error in form.receipt_id_or_object_of_payment_details.errors %}
-                                            <label id="receipt_id_or_object_of_payment_details-error" class="error" for="receipt_id_or_object_of_payment_details"><b>{{ error }}</b></label>
-                                        {% endfor %}
-                                    {% endif %}
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <label class="form-label">Start Date</label>
-                                        {% crispy_field form.start_date %}
+                                        {% crispy_field form.start_date 'id' 'sdate' 'placeholder' 'Start Date' %}
                                     </div>
                                     {% if form.start_date.errors %}
                                         {% for error in form.start_date.errors %}
-                                            <label id="start_date-error" class="error" for="start_date"><b>{{ error }}</b></label>
+                                            <label id="start_date-error" class="error" ><b>{{ error }}</b></label>
                                         {% endfor %}
                                     {% endif %}
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">End Date</label>
-                                        {% crispy_field form.end_date %}
+                                        {% crispy_field form.end_date 'id' 'edate' 'placeholder' 'End Date' %}
                                     </div>
                                     {% if form.end_date.errors %}
                                         {% for error in form.end_date.errors %}
-                                            <label id="end_date-error" class="error" for="end_date"><b>{{ error }}</b></label>
+                                            <label id="end_date-error" class="error" ><b>{{ error }}</b></label>
                                         {% endfor %}
                                     {% endif %}
                                 </div>
@@ -178,19 +174,8 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Addmission Timing Table Id</label>
-                                        {% crispy_field form.addmission_timing_table_id %}
-                                    </div>
-                                    {% if form.addmission_timing_table_id.errors %}
-                                        {% for error in form.addmission_timing_table_id.errors %}
-                                            <label id="addmission_timing_table_id-error" class="error" for="addmission_timing_table_id"><b>{{ error }}</b></label>
-                                        {% endfor %}
-                                    {% endif %}
-                                </div>
-                                <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <label class="form-label" class="datepi">Pending Fees</label>
-                                        {% crispy_field form.pending_fees %}
+                                        <label class="form-label">Pending Fees</label>
+                                        {% crispy_field form.pending_fees  %}
                                     </div>
                                     {% if form.pending_fees.errors %}
                                         {% for error in form.pending_fees.errors %}
@@ -218,4 +203,23 @@
     <!-- Custom Js -->
     <script src="{% static 'js/pages/forms/form-validation.js' %}"></script>
 
+    <!-- Autosize Plugin Js -->
+    <script src="{% static 'plugins/autosize/autosize.js' %}"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="{% static 'plugins/momentjs/moment.js' %}"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js' %}"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+
+    <!-- Custom Js -->
+    <script src="{% static 'js/pages/forms/basic-form-elements.js' %}"></script>
+
+<script>
+    $('#sdate').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+    $('#edate').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+</script>
 {% endblock %}
