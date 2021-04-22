@@ -188,11 +188,11 @@
 
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        {% crispy_field form.birthdate 'class' 'datetimepicker' 'placeholder' 'Birth date' %}
+                                        {% crispy_field form.birthdate 'id' 'bdate' 'placeholder' 'Birth date' %}
                                     </div>
                                     {% if form.birthdate.errors %}
                                         {% for error in form.birthdate.errors %}
-                                            <label id="birthdate-error" class="error" for="birthdate"><b>{{ error }}</b></label>
+                                            <label id="birthdate-error" class="error" ><b>{{ error }}</b></label>
                                         {% endfor %}
                                     {% endif %}
                                 </div>
@@ -319,5 +319,9 @@
 
     <!-- Custom Js -->
     <script src="{% static 'js/pages/forms/basic-form-elements.js' %}"></script>
+
+<script>
+    $('#bdate').bootstrapMaterialDatePicker({ weekStart : 0, time: false });
+</script>
 
 {% endblock %}

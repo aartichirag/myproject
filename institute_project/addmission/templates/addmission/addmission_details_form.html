@@ -43,7 +43,10 @@
                                 {% csrf_token %}
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Student</label>
+<!--                                        <label class="form-label">Student</label>-->
+                                         <p>
+                                          <b>Student</b>
+                                        </p>
                                         {% crispy_field form.student %}
                                     </div>
                                     {% if form.student.errors %}
@@ -65,7 +68,10 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Course</label>
+<!--                                        <label class="form-label">Course</label>-->
+                                         <p>
+                                          <b>Course</b>
+                                        </p>
                                         {% crispy_field form.course %}
                                     </div>
                                     {% if form.course.errors %}

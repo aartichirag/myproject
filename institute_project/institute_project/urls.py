@@ -25,5 +25,6 @@ urlpatterns = [
     path('course/',include("course.urls")),
     path('student/',include("student.urls")),
     path("addmission/",include("addmission.urls")),
+    path("payment/",include("payment.urls")),
     path('login/',LoginView.as_view(template_name="users/sign-in.html",success_url="/home/"),name="login")
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
