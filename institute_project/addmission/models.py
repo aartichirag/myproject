@@ -19,7 +19,7 @@ class addmission_details(models.Model):
     pending_fees=models.IntegerField()
 
     def __str__(self):
-        return f"{self.id}{self.student}-{self.course}-{self.fees}"
+        return f"{self.id}"
 
     def get_absolute_url(self):
         return reverse('addmission-view')

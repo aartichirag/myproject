@@ -7,7 +7,7 @@ class payment_details(models.Model):
     receipt_date=models.DateField()
     amount=models.IntegerField()
     type=models.CharField(max_length=10, choices=[('Cash','Cash'),('Chaque', 'Chaque')])
-    chaque_no=models.IntegerField(blank=True,null=True)
+    chaque_no=models.CharField(blank=True,null=True,max_length=30)
     bank_name=models.CharField(max_length=30,blank=True,null=True)
     branch_name=models.CharField(max_length=30,blank=True,null=True)
     chaque_date=models.DateField(blank=True, null=True)

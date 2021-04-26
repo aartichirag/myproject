@@ -4,7 +4,7 @@
   <h1>
         <form method="post">
         {% csrf_token %}
-            Are you sure you want to delete {{object.receipt}}?
+            Are you sure you want to delete {{object.receipt}}-{{object.receipt_date}}?
 
                 <input type="submit" value="submit">
         </form>
