@@ -710,42 +710,14 @@
                             <div>
                                 <ul class="nav nav-tabs" role="tablist">
 
-                                    <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab">Student Personal Detail</a></li>
+                                    <li role="presentation"><a href="#home" aria-controls="settings" role="tab" data-toggle="tab">Student Personal Detail</a></li>
+                                    <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab">Payment Details</a></li>
                                 </ul>
-
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane fade in active" id="home">
                                         <div class="panel panel-default panel-post">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade in" id="profile_settings">
-                                        <form class="form-horizontal">
-<!--                                            <div class="form-group">-->
-<!--                                                <label for="InputExperience" class="col-sm-2 control-label">Student</label>-->
-<!--                                                <div class="col-sm-10">-->
-<!--                                                    <div class="form-line">-->
-<!--                                                        {{ addmission_details.student }}-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-group">-->
-<!--                                                <label for="InputExperience" class="col-sm-2 control-label">date_of_addmission</label>-->
-<!--                                                <div class="col-sm-10">-->
-<!--                                                    <div class="form-line">-->
-<!--                                                        {{ addmission_details.date_of_addmission }}-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="form-group">-->
-<!--                                                <label for="InputExperience" class="col-sm-2 control-label">Course</label>-->
-<!--                                                <div class="col-sm-10">-->
-<!--                                                    <div class="form-line">-->
-<!--                                                        {{ addmission_details.course }}-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
+                                          <form class="form-horizontal">
+                                            <div class="form-group">
                                             <div class="form-group">
                                                 <label for="InputExperience" class="col-sm-2 control-label">Start Time</label>
                                                 <div class="col-sm-10">
@@ -834,30 +806,40 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-<!--                                            <div class="form-group">-->
-<!--                                                <div class="col-sm-offset-2 col-sm-10">-->
-<!--                                                    <input type="checkbox" id="terms_condition_check" class="chk-col-red filled-in" />-->
-<!--                                                    <label for="terms_condition_check">I agree to the <a href="#">terms and conditions</a></label>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-danger">SUBMIT</button>
-                                                </div>
                                             </div>
-                                        </form>
+                                      </form>
+                                         </div>
                                     </div>
+                                    <div role="tabpanel" class="tab-pane fade active in" id="profile_settings">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Reciept Id</th>
+                                                    <th>Reciept Date</th>
+                                                    <th>Payment Type</th>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for pay in addmission_details.payment.all %}
+                                                <tr>
+                                                    <td>{{pay.id}}</td>
+                                                    <td>{{pay.receipt_date}}</td>
+                                                    <td>{{pay.type}}</td>
+                                                    <td>{{pay.amount}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
 
-                                        </form>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                    </div>
+                </div>
     </section>
     {% endblock %}
     {% block extra_js_lib %}
