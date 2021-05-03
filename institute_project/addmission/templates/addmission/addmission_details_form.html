@@ -189,6 +189,17 @@
                                         {% endfor %}
                                     {% endif %}
                                 </div>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <label class="form-label">Inquiry</label>
+                                        {% crispy_field form.inquiry  %}
+                                    </div>
+                                    {% if form.inquiry.errors %}
+                                        {% for error in form.inquiry.errors %}
+                                            <label id="inquiry-error" class="error" for="inquiry"><b>{{ error }}</b></label>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             </form>
                         </div>

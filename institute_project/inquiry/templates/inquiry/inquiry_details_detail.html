@@ -672,9 +672,9 @@
                             <div class="image-area">
                                 <img src="{{ student_personal_info.photo.url }}" alt="AdminBSB - Profile Image" height="100px"  />
                             </div>
-                            {% for student in students %}
+                            {% for inquiry in inquiries %}
                             <div class="content-area">
-                                <h3>{{student.student_first_name }}</h3>
+                                <h3>{{inquiry.inquiry_date }}</h3>
 <!--                                <p>Web Software Developer</p>-->
 <!--                                <p>Administrator</p>-->
                             </div>
@@ -683,20 +683,24 @@
                         <div class="profile-footer">
                             <ul>
                                 <li>
-                                    <span>Student Name</span>
-                                    <span>{{student_personal_info.student_first_name}}</span>
+                                    <span>First Name</span>
+                                    <span>{{inquiry_details.first_name}}</span>
                                 </li>
                                 <li>
-                                    <span>Birth Date</span>
-                                    <span>{{ student_personal_info.birthdate }}</span>
+                                    <span>Mobile Number</span>
+                                    <span>{{ inquiry_details.mobile_number }}</span>
                                 </li>
                                  <li>
-                                    <span>Mobile Number</span>
-                                    <span>{{ student_personal_info.mobile_number }}</span>
+                                    <span>Education</span>
+                                    <span>{{ inquiry_details.education }}</span>
                                 </li>
                                 <li>
-                                    <span>Email Id</span>
-                                    <span>{{ student_personal_info.email_id }}</span>
+                                    <span>Course</span>
+                                    <span>
+                                    {% for course in inquiry_details.course.all %}
+                                        {{ course.name }} ,
+                                    {% endfor %}
+                                    </span>
                                 </li>
                             </ul>
                             <button class="btn btn-primary btn-lg waves-effect btn-block">FOLLOW</button>
@@ -710,7 +714,7 @@
                             <div>
                                 <ul class="nav nav-tabs" role="tablist">
 
-                                    <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab">Student Personal Detail</a></li>
+                                    <li role="presentation"><a href="#profile_settings" aria-controls="settings" role="tab" data-toggle="tab">Inquiry Detail</a></li>
                                 </ul>
 
                                 <div class="tab-content">
@@ -723,164 +727,110 @@
                                     <div role="tabpanel" class="tab-pane fade in" id="profile_settings">
                                         <form class="form-horizontal">
                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Student First Name</label>
+                                                <label for="InputExperience" class="col-sm-2 control-label">First Name</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.student_first_name }}
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Student Last Name</label>
-
-                                                <div class="col-sm-10">
-                                                    <div class="form-line">
-                                                        {{ student_personal_info.student_last_name }}
-                                                    </div>
-                                                </div>
-                                            </div>
-<!--                                            <div class="form-group">-->
-<!--                                                <label for="InputExperience" class="col-sm-2 control-label">Student Second Name</label>-->
-
-<!--                                                <div class="col-sm-10">-->
-<!--                                                    <div class="form-line">-->
-<!--                                                        {{ student_personal_info.student_second_name }}-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-                                            <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Father First Name</label>
-
-                                                <div class="col-sm-10">
-                                                    <div class="form-line">
-                                                        {{ student_personal_info.father_first_name }}
-                                                    </div>
-                                                </div>
-                                            </div>
-<!--                                            <div class="form-group">-->
-<!--                                                <label for="InputExperience" class="col-sm-2 control-label">Father Second Name</label>-->
-
-<!--                                                <div class="col-sm-10">-->
-<!--                                                    <div class="form-line">-->
-<!--                                                        {{ student_personal_info.father_second_name }}-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-                                            <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Father Last Name</label>
-
-                                                <div class="col-sm-10">
-                                                    <div class="form-line">
-                                                        {{ student_personal_info.father_last_name }}
+                                                        {{ inquiry_details.first_name }}
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">House No Or Building Name</label>
-
+                                                <label for="InputExperience" class="col-sm-2 control-label">Second Name</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.houseno_building_name }}
+                                                        {{ inquiry_details.second_name }}
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">St. Name</label>
-
+                                                <label for="InputExperience" class="col-sm-2 control-label">Last Name</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.st_name }}
+                                                        {{ inquiry_details.last_name }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">St.Name</label>
+                                                <div class="col-sm-10">
+                                                    <div class="form-line">
+                                                        {{ inquiry_details.st_name }}
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="InputExperience" class="col-sm-2 control-label">Area Name</label>
-
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.area_name }}
+                                                        {{ inquiry_details.area_name }}
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">City Name</label>
-
+                                                <label for="InputExperience" class="col-sm-2 control-label">Phone Number(house)</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.city_name }}
+                                                        {{ inquiry_details.phone_number_house }}
                                                     </div>
                                                 </div>
                                             </div>
-                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Country Name</label>
-
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">College Name</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.country_name }}
+                                                        {{ inquiry_details.college_name }}
                                                     </div>
                                                 </div>
                                             </div>
-                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Phone Number(House)</label>
-
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Referance Name</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.phone_number_house }}
+                                                        {{ inquiry_details.referance_name }}
                                                     </div>
                                                 </div>
                                             </div>
-                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">School Name Or College Name</label>
-
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Remarks</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.school_college_name }}
+                                                        {{ inquiry_details.remarks }}
                                                     </div>
                                                 </div>
                                             </div>
-                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Education</label>
-
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Inquiry Held By</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.education }}
+                                                        {{ inquiry_details.inquiry_held_by }}
                                                     </div>
                                                 </div>
                                             </div>
-                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Photo</label>
-
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Inquiry Institute Phone</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.photo }}
+                                                        {{ inquiry_details.inquiry_institute_phone }}
                                                     </div>
                                                 </div>
                                             </div>
-                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Biomatric Data</label>
-
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Demo Lecture Date</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.biomatric_data }}
+                                                        {{ inquiry_details.demo_lecture_date }}
                                                     </div>
                                                 </div>
                                             </div>
-                                             <div class="form-group">
-                                                <label for="InputExperience" class="col-sm-2 control-label">Inquiry Id</label>
-
+                                            <div class="form-group">
+                                                <label for="InputExperience" class="col-sm-2 control-label">Demo Lecture Time</label>
                                                 <div class="col-sm-10">
                                                     <div class="form-line">
-                                                        {{ student_personal_info.inquiry_id }}
+                                                        {{ inquiry_details.demo_lecture_time }}
                                                     </div>
                                                 </div>
                                             </div>
 
-<!--                                            <div class="form-group">-->
-<!--                                                <div class="col-sm-offset-2 col-sm-10">-->
-<!--                                                    <button type="submit" class="btn btn-danger">SUBMIT</button>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
                                         </form>
                                     </div>
 

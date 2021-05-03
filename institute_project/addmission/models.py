@@ -17,6 +17,7 @@ class addmission_details(models.Model):
     no_of_days=models.IntegerField()
     remarks=models.CharField(max_length=20)
     pending_fees=models.IntegerField()
+    inquiry=models.ForeignKey('inquiry.inquiry_details',default=4,on_delete=models.CASCADE,related_name="addmission")
 
     def __str__(self):
         return f"{self.id}-{self.student}-{self.course}"

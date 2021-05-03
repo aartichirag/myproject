@@ -12,7 +12,7 @@ class course_master(models.Model):
     user=models.ForeignKey(User,on_delete=models.PROTECT,related_name='course')
 
     def __str__(self):
-        return f"{self.name} - {self.status}"
+        return f"{self.id}-{self.name}"
 
     def get_absolute_url(self):
         return reverse('course-view')
