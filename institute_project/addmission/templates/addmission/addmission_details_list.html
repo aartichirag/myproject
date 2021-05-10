@@ -30,8 +30,6 @@
                         <div class="body">
                             <div class="table-responsive">
                                 <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-
-
                                     <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="DataTables_Table_1" role="grid" aria-describedby="DataTables_Table_1_info">
                                     <thead>
                                         <tr role="row">
@@ -40,7 +38,6 @@
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 139px;">Course</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Fees</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Inquiry</th>
-
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -50,8 +47,6 @@
                                             <th rowspan="1" colspan="1">course</th>
                                             <th rowspan="1" colspan="1">Fees</th>
                                             <th rowspan="1" colspan="1">Inquiry</th>
-
-
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -62,7 +57,6 @@
                                                 <td>{{ addmission.course }}</td>
                                                 <td>{{ addmission.fees }}</td>
                                                 <td>{{ addmission.inquiry }}</td>
-
                                                 <td>
                                                     <a href="{% url 'addmission-update' addmission.id %}"><div class="demo-google-material-icon"> <i class="material-icons">edit</i> <span class="icon-name">edit</span> </div></a>
                                                     <a href="{% url 'addmission-detail' addmission.id %}"><div class="demo-google-material-icon"> <i class="material-icons">details</i> <span class="icon-name">details</span> </div></a>
@@ -77,6 +71,7 @@
                     </div>
                 </div>
             </div>
+    </div>
 {% endblock %}
 {% block extra_js_lib %}
      <!-- Jquery DataTable Plugin Js -->

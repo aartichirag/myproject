@@ -34,7 +34,8 @@
 
     <h3> Are you sure you want to delete??</h3>
 
-    <input type="submit" value="submit" class="btn btn-danger waves-effect">
+    <input type="submit" value="delete" class="btn btn-danger waves-effect">
+    <a href="{% url 'payment-view'%}"><input type="cancel" value="cancel" class="btn btn-danger waves-effect"></a>
 </form>
 {% endblock %}
 

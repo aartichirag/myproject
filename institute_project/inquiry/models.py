@@ -24,7 +24,7 @@ class inquiry_details(models.Model):
     demo_lecture_time=models.TimeField(blank=True,null=True)
 
     def __str__(self):
-        return f"{self.id}-{self.first_name}-{self.course.name}"
+        return f"{self.id}-{self.first_name}"
 
     def get_absolute_url(self):
         return reverse('inquiry-view')

@@ -35,7 +35,8 @@
                                     <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="DataTables_Table_1" role="grid" aria-describedby="DataTables_Table_1_info">
                                     <thead>
                                         <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Name</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Id</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Course Name</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 303px;">Description</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 139px;">Duration</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 68px;">Fees</th>
@@ -45,7 +46,8 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th rowspan="1" colspan="1">Name</th>
+                                            <th rowspan="1" colspan="1">ID</th>
+                                            <th rowspan="1" colspan="1"> Course Name</th>
                                             <th rowspan="1" colspan="1">Description</th>
                                             <th rowspan="1" colspan="1">Duration</th>
                                             <th rowspan="1" colspan="1">Fees</th>
@@ -57,6 +59,7 @@
                                     <tbody>
                                         {% for course in courses %}
                                             <tr>
+                                                <td>{{course.id}}</td>
                                                 <td>{{ course.name }}</td>
                                                 <td>{{ course.description }}</td>
                                                 <td>{{ course.duration }}</td>
@@ -75,6 +78,7 @@
                     </div>
                 </div>
             </div>
+    </div>
 {% endblock %}
 {% block extra_js_lib %}
      <!-- Jquery DataTable Plugin Js -->

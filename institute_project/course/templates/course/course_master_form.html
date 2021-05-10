@@ -33,7 +33,7 @@
                                 {% csrf_token %}
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Name</label>
+                                        <label class="form-label"> Course Name</label>
                                         {% crispy_field form.name %}
                                     </div>
                                     {% if form.name.errors %}
