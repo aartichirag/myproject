@@ -13,7 +13,7 @@ class addmission_details(models.Model):
     end_date=models.DateField()
     scan_copy_of_id_proof=models.FileField(upload_to='documents')
     fees=models.IntegerField()
-    status=models.CharField(max_length=10,choices=[('Active','Active'),('Deactive','Deactive'),('Close','Close')])
+    status=models.CharField(max_length=10,choices=[('Active','Active'),('On hold','On hold'),('Close','Close')])
     no_of_days=models.IntegerField()
     remarks=models.CharField(max_length=20)
     pending_fees=models.IntegerField()

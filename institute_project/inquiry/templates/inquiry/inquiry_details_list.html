@@ -8,79 +8,78 @@
 {% endblock %}
 {% block body %}
     <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>
-                                Inquiry Details
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
-                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
-                                        <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
-                                    </ul>
-                                </li>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Inquiry Details
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
+                                <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a></li>
+                                <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else here</a></li>
                             </ul>
-                        </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                                <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="DataTables_Table_1" role="grid" aria-describedby="DataTables_Table_1_info">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Inquiry Id</th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Inquiry Date</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 303px;">First Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Mobile Number</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">City Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Course</th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Action</th>
 
-
-                                    <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="DataTables_Table_1" role="grid" aria-describedby="DataTables_Table_1_info">
-                                    <thead>
-                                        <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Inquiry Id</th>
-                                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 188px;">Inquiry Date</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 303px;">First Name</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Mobile Number</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">City Name</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">Course</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th rowspan="1" colspan="1">Inquiry Id</th>
+                                        <th rowspan="1" colspan="1">Inquiry Date</th>
+                                        <th rowspan="1" colspan="1">First Name</th>
+                                        <th rowspan="1" colspan="1">Mobile Number</th>
+                                        <th rowspan="1" colspan="1">City Name</th>
+                                        <th rowspan="1" colspan="1">Course</th>
+                                        <th rowspan="1" colspan="1">Action</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    {% for inquiry in inquiries %}
                                         <tr>
-                                            <th rowspan="1" colspan="1">Inquiry Id</th>
-                                            <th rowspan="1" colspan="1">Inquiry Date</th>
-                                            <th rowspan="1" colspan="1">First Name</th>
-                                            <th rowspan="1" colspan="1">Mobile Number</th>
-                                            <th rowspan="1" colspan="1">City Name</th>
-                                            <th rowspan="1" colspan="1">Course</th>
-
+                                            <td>{{inquiry.id}}</td>
+                                            <td>{{ inquiry.inquiry_date }}</td>
+                                            <td>{{inquiry.first_name }}</td>
+                                            <td>{{inquiry.mobile_number }}</td>
+                                            <td>{{inquiry.city_name }}</td>
+                                            <td>{% for course in inquiry.course.all %}
+                                                    {{ course.name}} ,
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                <a href="{% url 'inquiry-update' inquiry.id %}"><div class="demo-google-material-icon"> <i class="material-icons">edit</i> <span class="icon-name">edit</span> </div></a>
+                                                <a href="{% url 'inquiry-detail' inquiry.id %}"><div class="demo-google-material-icon"> <i class="material-icons">details</i> <span class="icon-name">details</span> </div></a>
+                                            </td>
                                         </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        {% for inquiry in inquiries %}
-                                            <tr>
-                                                <td>{{inquiry.id}}</td>
-                                                <td>{{ inquiry.inquiry_date }}</td>
-                                                <td>{{inquiry.first_name }}</td>
-                                                <td>{{inquiry.mobile_number }}</td>
-                                                <td>{{inquiry.city_name }}</td>
-
-                                                <td>{% for course in inquiry.course.all %}
-                                                            {{ course.name}} ,
-                                                    {% endfor %}
-                                                </td>
-                                                <td>
-                                                    <a href="{% url 'inquiry-update' inquiry.id %}"><div class="demo-google-material-icon"> <i class="material-icons">edit</i> <span class="icon-name">edit</span> </div></a>
-                                                    <a href="{% url 'inquiry-detail' inquiry.id %}"><div class="demo-google-material-icon"> <i class="material-icons">details</i> <span class="icon-name">details</span> </div></a>
-                                                </td>
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                                </div>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 {% endblock %}
 {% block extra_js_lib %}
      <!-- Jquery DataTable Plugin Js -->
@@ -96,4 +95,5 @@
     <script src="{% static 'js/pages/tables/jquery-datatable.js' %}"></script>
     <!-- Bootstrap Notify Plugin Js -->
     <script src="{% static 'plugins/bootstrap-notify/bootstrap-notify.js' %}"></script>
+
 {% endblock %}
