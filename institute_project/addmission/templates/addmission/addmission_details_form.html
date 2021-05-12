@@ -47,7 +47,7 @@
                                          <p>
                                           <b>Student</b>
                                         </p>
-                                        {% crispy_field form.student %}
+                                        {% crispy_field form.student 'data-live-search' 'true' %}
                                     </div>
                                     {% if form.student.errors %}
                                         {% for error in form.student.errors %}
@@ -72,7 +72,7 @@
                                          <p>
                                           <b>Course</b>
                                         </p>
-                                        {% crispy_field form.course %}
+                                        {% crispy_field form.course 'data-live-search' 'true' %}
                                     </div>
                                     {% if form.course.errors %}
                                         {% for error in form.course.errors %}
@@ -194,8 +194,11 @@
                                 </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <label class="form-label">Inquiry</label>
-                                        {% crispy_field form.inquiry  %}
+                                        <p>
+                                          <b>Inquiry</b>
+                                        </p>
+<!--                                        <label class="form-label">Inquiry</label>-->
+                                        {% crispy_field form.inquiry 'data-live-search' 'true' %}
                                     </div>
                                     {% if form.inquiry.errors %}
                                         {% for error in form.inquiry.errors %}
